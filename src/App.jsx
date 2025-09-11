@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Sidebar from "./components/Sidebar";
-import ProductCard from "./components/ProductCard";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import Sidebar from "./components/Sidebar.jsx";
+import ProductCard from "./components/ProductCard.jsx";
 import "./App.css";
 
 function App() {
