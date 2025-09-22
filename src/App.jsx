@@ -9,7 +9,7 @@ function App() {
     const product = [
         {id: 1, name: "Notebook", price: 3500, description: "Notebook com 16GB RAM e 512GB SSD"},
         {id: 2, name: "Smartphone", price: 2000, description: "Tela AMOLED e câmera tripla"},
-        {id: 3, name: "Fone de ouvido", price: 300, description: "Bluetooth com cancelamento"},
+        {id: 3, name: "Fone de ouvido", price: 300, description: "Bluetooth com cancelamento de ruido"},
         {id: 4, name: "Teclado", price: 450, description: "Teclado mecânico RGB para PC"}
     ];
 
