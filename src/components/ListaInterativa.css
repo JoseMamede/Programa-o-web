@@ -1,0 +1,76 @@
+.lista-container {
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-area button {
+  padding: 8px 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-area button:hover {
+  background: #0056b3;
+}
+
+.lista-itens {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.lista-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.lista-item span {
+  flex: 1;
+}
+
+.botoes button {
+  margin-left: 8px;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.botoes button:first-child {
+  background: #ffc107;
+  color: #000;
+}
+
+.botoes button:first-child:hover {
+  background: #e0a800;
+}
+
+.botoes button:last-child {
+  background: #dc3545;
+  color: #fff;
+}
+
+.botoes button:last-child:hover {
+  background: #a71d2a;
+}

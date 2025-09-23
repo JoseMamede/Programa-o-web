@@ -3,7 +3,7 @@ import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import ProductCard from "./components/ProductCard.jsx";
-import ListaInterativa from "./components/ListaInterativa.jsx"; // 👈 aqui
+import ListaInterativa from "./components/ListaInterativa.jsx"; 
 import "./App.css";
 
 function App() {

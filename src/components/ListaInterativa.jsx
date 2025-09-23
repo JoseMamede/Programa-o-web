@@ -1,46 +1,62 @@
 import { useState } from "react";
+import "./ListaInterativa.css"; // 👈 importa o CSS
 
 export default function ListaInterativa() {
-  const [texto, setTexto] = useState(""); 
-  const [itens, setItens] = useState([]); 
+  const [texto, setTexto] = useState("");
+  const [itens, setItens] = useState([]);
+  const [editIndex, setEditIndex] = useState(null);
 
-  const adicionarItem = () => {
-    if (texto.trim() !== "") {
-      setItens([...itens, texto]); 
-      setTexto(""); 
+  const adicionarOuEditarItem = () => {
+    if (texto.trim() === "") return;
+
+    if (editIndex !== null) {
+      const novaLista = [...itens];
+      novaLista[editIndex] = texto;
+      setItens(novaLista);
+      setEditIndex(null);
+    } else {
+      setItens([...itens, texto]);
     }
+    setTexto("");
+  };
+
+  const excluirItem = (index) => {
+    const novaLista = itens.filter((_, i) => i !== index);
+    setItens(novaLista);
+  };
+
+  const editarItem = (index) => {
+    setTexto(itens[index]);
+    setEditIndex(index);
   };
 
   return (
-    <div className="p-4 max-w-sm mx-auto">
-      <h2 className="text-xl font-bold mb-2">Lista Interativa</h2>
+    <div className="lista-container">
+      <h2>Lista Interativa</h2>
 
-  
-      <input
-        type="text"
-        value={texto}
-        onChange={(e) => setTexto(e.target.value)} 
-        placeholder="Digite algo..."
-        className="border p-2 rounded w-full mb-2"
-      />
+      <div className="input-area">
+        <input
+          type="text"
+          value={texto}
+          onChange={(e) => setTexto(e.target.value)}
+          placeholder="Digite algo..."
+        />
+        <button onClick={adicionarOuEditarItem}>
+          {editIndex !== null ? "Salvar" : "Adicionar"}
+        </button>
+      </div>
 
-
-      <button
-        onClick={adicionarItem} 
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-      >
-        Adicionar
-      </button>
-
-      {itens.length > 0 && (
-        <ul className="mt-4 list-disc pl-5">
-          {itens.map((item, index) => (
-            <li key={index} className="text-gray-700">
-              {item}
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul className="lista-itens">
+        {itens.map((item, index) => (
+          <li key={index} className="lista-item">
+            <span>{item}</span>
+            <div className="botoes">
+              <button onClick={() => editarItem(index)}>Editar</button>
+              <button onClick={() => excluirItem(index)}>Excluir</button>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
