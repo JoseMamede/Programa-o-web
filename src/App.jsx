@@ -3,6 +3,7 @@ import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import ProductCard from "./components/ProductCard.jsx";
+import ListaInterativa from "./components/ListaInterativa.jsx"; // 👈 aqui
 import "./App.css";
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
             <div className="main-content">
                 <Sidebar />
                 <div className="content-area">
+                    
+                    {/* Cards dos produtos */}
                     {product.map((product) => (
                         <ProductCard
                             key={product.id}
@@ -27,6 +30,9 @@ function App() {
                             description={product.description}
                         />
                     ))}
+
+                    {/* Sua lista interativa */}
+                    <ListaInterativa /> 
                 </div>
             </div>
             <Footer />
