@@ -1,31 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { CartContext } from "./CartContext";
 import "./ProductCard.css";
 
-function ProductCard({ name, price, description }) {
-  const [quantity, setQuantity] = useState(0);
-
-  const handleAdd = () => {
-    setQuantity((prev) => prev + 1);
-  };
-
-  const handleRemove = () => {
-    setQuantity((prev) => (prev > 0 ? prev - 1 : 0));
-  };
+function ProductCard({ product }) {
+  const { addToCart, removeFromCart } = useContext(CartContext);
 
   return (
     <div className="product-card">
-      <h3>{name}</h3>
-      <p>Preço: R$ {price}</p>
-      <p>{description}</p>
-
-      <button onClick={handleAdd}>Add Carrinho</button>
-
-      {quantity > 0 && (
-        <>
-          <button onClick={handleRemove}>Remover Item Carrinho</button>
-          <p>Quantidade de Itens no Carrinho: {quantity}</p>
-        </>
-      )}
+      <h3>{product.name}</h3>
+      <p>{product.description}</p>
+      <p>Preço: R$ {product.price}</p>
+      <button onClick={() => addToCart(product)}>Adicionar</button>
+      <button onClick={() => removeFromCart(product)}>Remover</button>
     </div>
   );
 }
