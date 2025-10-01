@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar";
-import ProductCard from "./components/ProductCard";
-import ListaInterativa from "./components/ListaInterativa";
-import { CartProvider } from "./components/CartContext"; // 👈 agora vem de components
+import ProductCard from "./components/ProductCard/ProductCard";
+import ListaInterativa from "./components/ListaInterativa/ListaInterativa";
+import { CartProvider } from "./components/CartContext"; // 
 import "./App.css";
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
             {products.map((product) => (
               <ProductCard
                 key={product.id}
-                product={product} // 👈 passamos o objeto inteiro
+                product={product} 
               />
             ))}
 

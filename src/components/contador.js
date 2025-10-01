@@ -4,7 +4,7 @@ function Contador(){
     
     function incrementar(){
         setNumero(numero + 1)
-        // poderi fazer varias linhas aqui
+  
     };
 
     

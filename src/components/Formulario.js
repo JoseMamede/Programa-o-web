@@ -1,16 +1,20 @@
 import { useState } from "react";
 
-function Formulario(){
-    const [nome, setNumero] = useState("");
+function Formulario() {
+  const [nome, setNome] = useState("");
 
-    func
-
-    return(
-        <>
-            <h1>Formulario de cadastro</h1>
-            <input type="text" value={nome} onChange={e}> => setNumero</input>
-        </>
-    );
+  return (
+    <>
+      <h1>Formulario de cadastro</h1>
+      <input
+        type="text"
+        value={nome}
+        onChange={(e) => setNome(e.target.value)}
+        placeholder="Digite seu nome"
+      />
+      <p>Você digitou: {nome}</p>
+    </>
+  );
 }
 
 export default Formulario;
